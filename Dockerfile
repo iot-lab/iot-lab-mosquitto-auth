@@ -9,6 +9,6 @@ COPY main.py /usr/local/bin/
 COPY run.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/run.sh
 
-EXPOSE 5000
+EXPOSE 8000
 
 ENTRYPOINT ["run.sh"]

@@ -56,7 +56,10 @@ def acls():
     username = data["username"]
     topic = data["topic"]
 
-    ret = "true" if topic.startswith(f"iotlab/{username}") else "false"
+    ret = "false" 
+    if topic.startswith(f"iotlab/{username}") or\
+        topic.startswith(f"localisation/") :
+        ret = "true"
     if ret == "true":
         app.logger.info(
             f"ACL accepted for user '{username}' on topic '{topic}'"
